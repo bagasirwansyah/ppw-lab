@@ -1,14 +1,18 @@
+from datetime import datetime
+
 from django.shortcuts import render
-from datetime import datetime, date
-# Enter your name here
-mhs_name = '' # TODO Implement this
-curr_year = int(datetime.now().strftime("%Y"))
-birth_date = date() #TODO Implement this, format (Year, Month, Date)
-npm = None # TODO Implement this
-# Create your views here.
+
+mhs_name = 'Bagas Irwansyah'
+curr_date = datetime.now()
+birth_date = datetime(1998, 2, 12)
+npm = 1606880730
+
+
 def index(request):
-    response = {'name': mhs_name, 'age': calculate_age(birth_date.year), 'npm': npm}
+    response = {'name': mhs_name, 'age': calculate_age(birth_date), 'npm': npm}
     return render(request, 'index_lab1.html', response)
 
-def calculate_age(birth_year):
-    return curr_year - birth_year if birth_year <= curr_year else 0
+
+def calculate_age(date_of_birth):
+    age = ((curr_date - date_of_birth) / 365.25).days
+    return age if age > 0 else 0

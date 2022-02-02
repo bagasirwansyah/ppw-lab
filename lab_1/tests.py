@@ -1,19 +1,16 @@
-from django.test import TestCase
-from django.test import Client
-from django.urls import resolve
-from .views import index, mhs_name, calculate_age
+from datetime import datetime
+
 from django.http import HttpRequest
-from datetime import date
-import unittest
+from django.test import Client, TestCase
+from django.urls import resolve
 
+from lab_1.views import calculate_age, index, mhs_name
 
-# Create your tests here.
 
 class Lab1UnitTest(TestCase):
-
     def test_hello_name_is_exist(self):
         response = Client().get('/lab-1/')
-        self.assertEqual(response.status_code,200)
+        self.assertEqual(response.status_code, 200)
 
     def test_using_index_func(self):
         found = resolve('/lab-1/')
@@ -27,12 +24,9 @@ class Lab1UnitTest(TestCase):
         self.assertIn('<h1>Hello my name is ' + mhs_name + '</h1>', html_response)
         self.assertFalse(len(mhs_name) == 0)
 
-
     def test_calculate_age_is_correct(self):
-        self.assertEqual(0, calculate_age(date.today().year))
-        self.assertEqual(17, calculate_age(2000))
-        self.assertEqual(27, calculate_age(1990))
-
+        self.assertEqual(0, calculate_age(datetime.now()))
+        self.assertEqual(23, calculate_age(datetime(1998, 2, 12)))
 
     def test_index_contains_age(self):
         request = HttpRequest()
