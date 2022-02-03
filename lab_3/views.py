@@ -1,7 +1,9 @@
-from django.shortcuts import render, redirect
-from lab_3.models import Diary
 from datetime import datetime
+
 import pytz
+from django.shortcuts import redirect, render
+
+from lab_3.models import Diary
 
 
 def index(request):
@@ -11,8 +13,13 @@ def index(request):
 
 def add_activity(request):
     if request.method == 'POST':
-        date = datetime.strptime(request.POST['date'], '%Y-%m-%dT%H:%M')
-        Diary.objects.create(date=date.replace(tzinfo=pytz.UTC), activity=request.POST['activity'])
+        try:
+            date = datetime.strptime(request.POST['date'], '%Y-%m-%dT%H:%M')
+            Diary.objects.create(date=date.replace(tzinfo=pytz.UTC), activity=request.POST['activity'])
+            return redirect('/lab-3/')
+        except:
+            return redirect('/lab-3/')
+    else:
         return redirect('/lab-3/')
 
 

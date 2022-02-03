@@ -3,21 +3,8 @@
 <h3 style="text-align: center">Hai semua, berikut adalah Catatan Harianku</h3>
 <br><br>
 <div class="row">
-    <div class="col-md-6 col-xs-6">
-        <table align="center" style="text-align: center">
-            <tr>
-                <th>Tanggal</th>
-                <th>Yang akan dikerjakan</th>
-            </tr>
-            {% for diary_data in diary_dict %}
-                <tr>
-                    <td class="date">{{ diary_data.date }}</td>
-                    <td class="activity">{{ diary_data.activity }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
-    <div class="col-md-6 col-xs-6">
+    <div class="col-md-1 col-xs-1"></div>
+    <div class="col-md-5 col-xs-5">
         <form method="POST" action="add_activity/">
             {% csrf_token %}
             <table>
@@ -40,6 +27,20 @@
             </table>
             <button type="submit" class="button btn-success">Submit</button>
         </form>
+    </div>
+    <div class="col-md-6 col-xs-6">
+        <table align="center" style="text-align: center">
+            <tr>
+                <th>Tanggal</th>
+                <th>Yang akan dikerjakan</th>
+            </tr>
+            {% for diary_data in diary_dict %}
+                <tr>
+                    <td class="date">{{ diary_data.date }}</td>
+                    <td class="activity">{{ diary_data.activity }}</td>
+                </tr>
+            {% endfor %}
+        </table>
     </div>
 </div>
 {% endblock %}
