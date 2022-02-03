@@ -1,4 +1,4 @@
-"""Lab1 URL Configuration
+"""Praktikum URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -14,14 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import include
-from django.urls import re_path
 from django.contrib import admin
+from django.urls import path
+
 from lab_1.views import index as index_lab1
 
-
 urlpatterns = [
-    re_path(r'^admin/', admin.site.urls),
-    re_path(r'^lab-1/', include('lab_1.urls')),
-    re_path(r'^lab-2/', include('lab_2.urls')),
-    re_path(r'^$', index_lab1, name='index')
+    path('admin/', admin.site.urls),
+    path('lab-1/', include('lab_1.urls')),
+    path('lab-2/', include('lab_2.urls')),
+    path('', index_lab1, name='index')
 ]
