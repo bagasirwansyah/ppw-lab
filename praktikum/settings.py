@@ -26,7 +26,7 @@ PRODUCTION = os.environ.get('DATABASE_URL') != None
 SECRET_KEY = 'wu8+v3gh8+1dt6vq+15kfk&)-h70!o6+&ke+#1o@kt6i-98yxq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['<url>']
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'lab_2_addon',
     'lab_3',
     'lab_4',
+    'lab_5',
 ]
 
 MIDDLEWARE = [
