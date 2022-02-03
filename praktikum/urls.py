@@ -24,4 +24,5 @@ urlpatterns = [
     path('lab-1/', include('lab_1.urls')),
     path('lab-2/', include('lab_2.urls')),
     path('lab-2-addon/', include('lab_2_addon.urls')),
+    path('lab-3/', include('lab_3.urls')),
 ]
