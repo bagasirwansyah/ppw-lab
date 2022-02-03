@@ -1,11 +1,11 @@
 from django.test import Client, TestCase
 from django.urls import resolve
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.ui import WebDriverWait
 
 from lab_5.forms import TodoForm
 from lab_5.models import Todo
@@ -90,7 +90,8 @@ class Lab5FunctionalTest(TestCase):
         self.selenium.quit()
         super(Lab5FunctionalTest, self).tearDown()
 
-    def test_input_todo(self):
+    # Disable functional test for master
+    def disable_test_input_todo(self):
         selenium = self.selenium
         # Opening the link we want to test
         selenium.get('http://127.0.0.1:8000/lab-5/')
