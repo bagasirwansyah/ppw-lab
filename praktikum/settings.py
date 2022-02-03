@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'lab_1',
     'lab_2',
+    'lab_2_addon',
 ]
 
 MIDDLEWARE = [

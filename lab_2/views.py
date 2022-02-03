@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from lab_1.views import mhs_name, birth_date
 
-#TODO Implement
-#Create a content paragraph for your landing page:
-landing_page_content = ''
+from lab_1.views import mhs_name
+
+landing_page_content = 'I am a programmer that resides in Jakarta, Indonesia'
+
 
 def index(request):
     response = {'name': mhs_name, 'content': landing_page_content}
