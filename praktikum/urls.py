@@ -19,11 +19,12 @@ from django.urls import path
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
-    path('', RedirectView.as_view(url='/lab-4/', permanent='true'), name='index'),
+    path('', RedirectView.as_view(url='/lab-5/', permanent='true'), name='index'),
     path('admin/', admin.site.urls),
     path('lab-1/', include('lab_1.urls')),
     path('lab-2/', include('lab_2.urls')),
     path('lab-2-addon/', include('lab_2_addon.urls')),
     path('lab-3/', include('lab_3.urls')),
     path('lab-4/', include(('lab_4.urls', 'lab-4'), namespace='lab-4')),
+    path('lab-5/', include(('lab_5.urls', 'lab-5'), namespace='lab-5')),
 ]
