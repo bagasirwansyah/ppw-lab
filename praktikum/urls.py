@@ -16,12 +16,12 @@ Including another URLconf
 from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
-
-from lab_1.views import index as index_lab1
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='/lab-2/', permanent='true'), name='index'),
     path('admin/', admin.site.urls),
     path('lab-1/', include('lab_1.urls')),
     path('lab-2/', include('lab_2.urls')),
-    path('', index_lab1, name='index')
+    path('lab-2-addon/', include('lab_2_addon.urls')),
 ]
