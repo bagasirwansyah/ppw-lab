@@ -1,0 +1,27 @@
+body {
+  background-image: url(../image/background.jpg);
+}
+
+.navbar-static-top {
+  margin-bottom: 19px;
+  background-color: lightgrey;
+}
+
+#biograph {
+  text-align: center;
+}
+
+#photo {
+  border-radius: 50%;
+  margin: 0px auto;
+  display:block;
+}
+
+/*Textarea not resizeable*/
+textarea {
+  resize:none
+}
+
+.warning {
+  background: red;
+}

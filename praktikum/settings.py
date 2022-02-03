@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'lab_2',
     'lab_2_addon',
     'lab_3',
+    'lab_4',
 ]
 
 MIDDLEWARE = [
@@ -115,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Jakarta'
 
 USE_I18N = True
 
