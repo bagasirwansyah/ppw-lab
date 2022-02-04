@@ -101,7 +101,7 @@ class Lab4UnitTest(TestCase):
     def test_root_url_now_is_using_index_page_from_lab_4(self):
         response = Client().get('/')
         self.assertEqual(response.status_code, 301)
-        self.assertRedirects(response, '/lab-5/', 301, 200)
+        self.assertRedirects(response, '/lab-6/', 301, 200)
 
     def test_home_page_have_navbar_and_copyright(self):
         response = Client().get('/lab-4/')
